@@ -15,10 +15,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4   # atualizado
+        uses: actions/checkout@v4
 
       - name: Set up Python 3.13
-        uses: actions/setup-python@v5   # atualizado
+        uses: actions/setup-python@v5
         with:
           python-version: 3.13
 
@@ -31,7 +31,7 @@ jobs:
       - name: Run Robot Framework tests
         run: |
           mkdir results
-          robot --outputdir results tests/
+          robot --outputdir results ./tests
 
       - name: Install wkhtmltopdf
         run: sudo apt-get update && sudo apt-get install -y wkhtmltopdf
